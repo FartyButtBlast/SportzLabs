@@ -27,3 +27,9 @@ Public policy pages:
 
 - `https://www.sportzlabs.com/privacy.html`
 - `https://www.sportzlabs.com/eula.html`
+
+Google Analytics is installed with measurement ID:
+
+```text
+G-PYHWJMJ0R7
+```
