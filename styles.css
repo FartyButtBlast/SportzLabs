@@ -1,0 +1,326 @@
+:root {
+  color-scheme: dark;
+  --bg: #07101f;
+  --panel: #0c1830;
+  --panel-strong: #111f3d;
+  --ink: #f6f8fc;
+  --muted: #aeb9c1;
+  --line: rgba(174, 185, 193, 0.22);
+  --red: #e51b23;
+  --blue: #203669;
+  --green: #12b886;
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #07101f 0%, #0b1428 54%, #050913 100%);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(18px, 5vw, 64px);
+  background: rgba(7, 16, 31, 0.82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.brand,
+nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: min(220px, 46vw);
+  height: auto;
+}
+
+nav a,
+.site-footer a {
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 92svh;
+  display: grid;
+  align-items: end;
+  padding: 130px clamp(18px, 5vw, 64px) 72px;
+  background:
+    linear-gradient(90deg, rgba(7, 16, 31, 0.96) 0%, rgba(7, 16, 31, 0.72) 48%, rgba(7, 16, 31, 0.2) 100%),
+    url("./assets/afl-performance-splash.png") right center / min(48vw, 560px) auto no-repeat,
+    radial-gradient(circle at top right, rgba(229, 27, 35, 0.26), transparent 32rem);
+}
+
+.hero-copy {
+  width: min(760px, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #ff5961;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 20px;
+  font-size: clamp(3rem, 9vw, 7.6rem);
+  line-height: 0.94;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  line-height: 1;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+p {
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.6;
+}
+
+.hero-copy p {
+  max-width: 640px;
+  font-size: clamp(1.08rem, 2vw, 1.34rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.primary-link {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(229, 27, 35, 0.24);
+}
+
+.secondary-link {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.section {
+  width: min(1180px, calc(100vw - 36px));
+  margin: 0 auto;
+  padding: 78px 0;
+}
+
+.section-head {
+  margin-bottom: 24px;
+}
+
+.app-card {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
+  gap: 26px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(17, 31, 61, 0.98), rgba(12, 24, 48, 0.98));
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.app-card img {
+  width: 132px;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.status {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 10px;
+  border: 1px solid rgba(18, 184, 134, 0.4);
+  border-radius: 999px;
+  background: rgba(18, 184, 134, 0.12);
+  color: #9bf3d1;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.app-card p:last-child,
+.principles p:last-child {
+  margin-bottom: 0;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.principles {
+  display: grid;
+  gap: 14px;
+}
+
+.principles article {
+  border-left: 4px solid var(--red);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 18px 18px 18px 20px;
+}
+
+.site-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid var(--line);
+  padding: 28px clamp(18px, 5vw, 64px);
+  color: var(--muted);
+}
+
+.footer-logo {
+  display: block;
+  width: min(168px, 44vw);
+  height: auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.legal-page {
+  width: min(940px, calc(100vw - 36px));
+  margin: 0 auto;
+  padding: 132px 0 78px;
+}
+
+.legal-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(17, 31, 61, 0.98), rgba(12, 24, 48, 0.98));
+  box-shadow: var(--shadow);
+  padding: clamp(22px, 4vw, 40px);
+}
+
+.legal-card h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+}
+
+.legal-card h2 {
+  margin: 30px 0 8px;
+  font-size: 1.18rem;
+}
+
+.legal-card p {
+  max-width: 760px;
+}
+
+.legal-card a {
+  color: #fff;
+  font-weight: 800;
+}
+
+.legal-date {
+  color: #d8dee8;
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    min-height: 88svh;
+    background:
+      linear-gradient(180deg, rgba(7, 16, 31, 0.86) 0%, rgba(7, 16, 31, 0.98) 76%),
+      url("./assets/afl-performance-splash.png") center 80px / min(82vw, 360px) auto no-repeat,
+      radial-gradient(circle at top right, rgba(229, 27, 35, 0.24), transparent 24rem);
+  }
+
+  .hero-copy {
+    padding-top: 240px;
+  }
+
+  .app-card,
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-card img {
+    width: 104px;
+  }
+
+  .app-link {
+    width: 100%;
+  }
+}
