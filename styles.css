@@ -205,15 +205,14 @@ p {
   gap: 10px;
 }
 
-.app-placeholder {
-  display: grid;
+.workout-logo {
+  display: block;
   width: 132px;
   aspect-ratio: 1;
-  place-items: center;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(229, 27, 35, 0.28), rgba(32, 54, 105, 0.58));
-  font-weight: 900;
+  object-fit: cover;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
 }
 
 .feature-list,
@@ -416,7 +415,7 @@ p {
   }
 
   .app-card img,
-  .app-placeholder {
+  .workout-logo {
     width: 104px;
   }
 
