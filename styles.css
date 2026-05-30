@@ -205,9 +205,10 @@ p {
   gap: 10px;
 }
 
-.workout-logo {
+.workout-studio-logo {
   display: block;
   width: 132px;
+  height: 132px;
   aspect-ratio: 1;
   border: 1px solid var(--line);
   border-radius: 24px;
@@ -415,8 +416,9 @@ p {
   }
 
   .app-card img,
-  .workout-logo {
+  .workout-studio-logo {
     width: 104px;
+    height: 104px;
   }
 
   .card-actions {
