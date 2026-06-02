@@ -45,16 +45,33 @@
       </nav>
     </header>
 
-    <main class="legal-page support-page">
-      <section class="legal-card support-card">
-        <p class="eyebrow">Application Support</p>
-        <h1>SportzLabs Support</h1>
-        <p>
-          Need help with AFL Performance or another SportzLabs app? Send a support request and we will get back to you
-          as soon as we can.
-        </p>
+    <main class="support-page">
+      <section class="support-hero">
+        <div>
+          <p class="eyebrow">Application Support</p>
+          <h1>SportzLabs Support</h1>
+          <p>
+            Submit a support request for AFL Performance, the SportzLabs website, or future SportzLabs apps. Include a
+            few details about what happened so we can look into it quickly.
+          </p>
+        </div>
+        <div class="support-product-card" aria-label="AFL Performance support">
+          <img src="./assets/afl-performance-icon.png" alt="AFL Performance app icon" />
+          <div>
+            <p class="status">Supported app</p>
+            <h2>AFL Performance</h2>
+            <p>Team dashboards, player comparison, PAV charts, data refresh questions and curated AFL news.</p>
+          </div>
+        </div>
+      </section>
 
-        <div class="support-grid">
+      <section class="support-layout">
+        <section class="support-panel">
+          <div class="support-panel-head">
+            <p class="eyebrow">Request Form</p>
+            <h2>Tell us what you need help with.</h2>
+          </div>
+
           <form id="supportForm" class="support-form">
             <label>
               Name
@@ -62,7 +79,7 @@
             </label>
 
             <label>
-              Email
+              Reply email
               <input id="supportEmail" name="email" type="email" autocomplete="email" required />
             </label>
 
@@ -99,30 +116,25 @@
               ></textarea>
             </label>
 
-            <button class="primary-link support-submit" type="submit">Send support request</button>
-            <p class="support-note">
-              This form opens your email app with the support request ready to send to Derek.enderby@outlook.com.
-            </p>
+            <button class="primary-link support-submit" type="submit">Submit support request</button>
+            <p id="supportStatus" class="support-note" aria-live="polite"></p>
           </form>
+        </section>
 
-          <aside class="support-details">
-            <h2>Contact</h2>
-            <p>
-              Email support directly at
-              <a href="mailto:Derek.enderby@outlook.com">Derek.enderby@outlook.com</a>.
-            </p>
+        <aside class="support-aside">
+          <article>
             <h2>Helpful Details</h2>
-            <p>
-              For faster support, include the app name, device type, screenshot if useful, and what you were trying to
-              do when the issue happened.
-            </p>
-            <h2>AFL Performance</h2>
-            <p>
-              For AFL Performance, support covers app access, screenshots, app store listing questions, data refresh
-              questions, player comparison, team dashboards, PAV charts, and curated AFL news.
-            </p>
-          </aside>
-        </div>
+            <p>Include the app name, device type, screenshot if useful, and what you were trying to do.</p>
+          </article>
+          <article>
+            <h2>Data Questions</h2>
+            <p>For AFL Performance, include the team, player, stat or news item you were viewing.</p>
+          </article>
+          <article>
+            <h2>Privacy Requests</h2>
+            <p>Use the same form and choose Privacy request as the issue type.</p>
+          </article>
+        </aside>
       </section>
     </main>
 
@@ -131,19 +143,22 @@
       <div class="footer-links">
         <a href="./support.html">Support</a>
         <a href="./privacy.html">Privacy</a>
+        <a href="./age-suitability.html">Age Suitability</a>
         <a href="./eula.html">EULA</a>
-        <a href="mailto:Derek.enderby@outlook.com">Derek.enderby@outlook.com</a>
       </div>
     </footer>
 
     <script>
       document.querySelector("#supportForm").addEventListener("submit", (event) => {
         event.preventDefault();
+        const form = event.currentTarget;
+        const status = document.querySelector("#supportStatus");
         const name = document.querySelector("#supportName").value.trim();
         const email = document.querySelector("#supportEmail").value.trim();
         const app = document.querySelector("#supportApp").value;
         const issue = document.querySelector("#supportIssue").value;
         const message = document.querySelector("#supportMessage").value.trim();
+        const recipient = ["Derek", "enderby@outlook.com"].join(".");
         const subject = encodeURIComponent(`SportzLabs support request: ${app} - ${issue}`);
         const body = encodeURIComponent(
           [
@@ -156,7 +171,9 @@
             message,
           ].join("\n"),
         );
-        window.location.href = `mailto:Derek.enderby@outlook.com?subject=${subject}&body=${body}`;
+        status.textContent = "Opening your email app with this support request.";
+        status.dataset.tone = "success";
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
       });
     </script>
   </body>
