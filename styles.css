@@ -383,6 +383,97 @@ p {
   color: #d8dee8;
 }
 
+.support-page {
+  width: min(1120px, calc(100vw - 36px));
+}
+
+.support-card p {
+  max-width: 840px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.support-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.support-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.support-form input,
+.support-form select,
+.support-form textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(4, 9, 19, 0.72);
+  color: var(--ink);
+  font: inherit;
+  padding: 0 14px;
+}
+
+.support-form textarea {
+  min-height: 160px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.support-form input:focus,
+.support-form select:focus,
+.support-form textarea:focus {
+  outline: 2px solid rgba(229, 27, 35, 0.4);
+  border-color: rgba(229, 27, 35, 0.8);
+}
+
+.full-field,
+.support-submit,
+.support-note {
+  grid-column: 1 / -1;
+}
+
+.support-submit {
+  border: 0;
+  cursor: pointer;
+}
+
+.support-note {
+  margin: -4px 0 0;
+  font-size: 0.95rem;
+}
+
+.support-details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 22px;
+}
+
+.support-details h2 {
+  margin: 0 0 8px;
+  font-size: 1.12rem;
+}
+
+.support-details h2:not(:first-child) {
+  margin-top: 24px;
+}
+
+.support-details p:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 760px) {
   .site-header,
   .site-footer {
@@ -411,7 +502,9 @@ p {
   .approach-grid,
   .faq-list,
   .product-hero,
-  .feature-grid {
+  .feature-grid,
+  .support-grid,
+  .support-form {
     grid-template-columns: 1fr;
   }
 

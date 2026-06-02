@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Application Support | SportzLabs</title>
+    <meta
+      name="description"
+      content="Get SportzLabs application support for AFL Performance and related sports intelligence apps."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.sportzlabs.com/support.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SportzLabs" />
+    <meta property="og:title" content="Application Support | SportzLabs" />
+    <meta
+      property="og:description"
+      content="SportzLabs application support for AFL Performance and related sports intelligence apps."
+    />
+    <meta property="og:url" content="https://www.sportzlabs.com/support.html" />
+    <meta property="og:image" content="https://www.sportzlabs.com/assets/afl-performance-icon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Application Support | SportzLabs" />
+    <meta
+      name="twitter:description"
+      content="SportzLabs application support for AFL Performance and related sports intelligence apps."
+    />
+    <meta name="twitter:image" content="https://www.sportzlabs.com/assets/afl-performance-icon.png" />
+    <meta name="theme-color" content="#07101f" />
+    <link rel="icon" href="./assets/afl-performance-icon.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYHWJMJ0R7"></script>
+    <script src="./analytics.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="SportzLabs home">
+        <img src="./assets/sportzlabs-logo.png" alt="SportzLabs" />
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./index.html#apps">Apps</a>
+        <a href="./index.html#approach">Approach</a>
+        <a href="./index.html#faq">FAQ</a>
+        <a href="./support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="legal-page support-page">
+      <section class="legal-card support-card">
+        <p class="eyebrow">Application Support</p>
+        <h1>SportzLabs Support</h1>
+        <p>
+          Need help with AFL Performance or another SportzLabs app? Send a support request and we will get back to you
+          as soon as we can.
+        </p>
+
+        <div class="support-grid">
+          <form id="supportForm" class="support-form">
+            <label>
+              Name
+              <input id="supportName" name="name" type="text" autocomplete="name" required />
+            </label>
+
+            <label>
+              Email
+              <input id="supportEmail" name="email" type="email" autocomplete="email" required />
+            </label>
+
+            <label>
+              App
+              <select id="supportApp" name="app" required>
+                <option value="AFL Performance">AFL Performance</option>
+                <option value="SportzLabs website">SportzLabs website</option>
+                <option value="Workout Studio">Workout Studio</option>
+                <option value="Other SportzLabs app">Other SportzLabs app</option>
+              </select>
+            </label>
+
+            <label>
+              Issue type
+              <select id="supportIssue" name="issue" required>
+                <option value="App support">App support</option>
+                <option value="Data question">Data question</option>
+                <option value="Bug report">Bug report</option>
+                <option value="Privacy request">Privacy request</option>
+                <option value="App Store question">App Store question</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label class="full-field">
+              Message
+              <textarea
+                id="supportMessage"
+                name="message"
+                rows="7"
+                placeholder="Tell us what happened, what device you are using, and any steps that help explain the issue."
+                required
+              ></textarea>
+            </label>
+
+            <button class="primary-link support-submit" type="submit">Send support request</button>
+            <p class="support-note">
+              This form opens your email app with the support request ready to send to Derek.enderby@outlook.com.
+            </p>
+          </form>
+
+          <aside class="support-details">
+            <h2>Contact</h2>
+            <p>
+              Email support directly at
+              <a href="mailto:Derek.enderby@outlook.com">Derek.enderby@outlook.com</a>.
+            </p>
+            <h2>Helpful Details</h2>
+            <p>
+              For faster support, include the app name, device type, screenshot if useful, and what you were trying to
+              do when the issue happened.
+            </p>
+            <h2>AFL Performance</h2>
+            <p>
+              For AFL Performance, support covers app access, screenshots, app store listing questions, data refresh
+              questions, player comparison, team dashboards, PAV charts, and curated AFL news.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img class="footer-logo" src="./assets/sportzlabs-logo.png" alt="SportzLabs" />
+      <div class="footer-links">
+        <a href="./support.html">Support</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./eula.html">EULA</a>
+        <a href="mailto:Derek.enderby@outlook.com">Derek.enderby@outlook.com</a>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector("#supportForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.querySelector("#supportName").value.trim();
+        const email = document.querySelector("#supportEmail").value.trim();
+        const app = document.querySelector("#supportApp").value;
+        const issue = document.querySelector("#supportIssue").value;
+        const message = document.querySelector("#supportMessage").value.trim();
+        const subject = encodeURIComponent(`SportzLabs support request: ${app} - ${issue}`);
+        const body = encodeURIComponent(
+          [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `App: ${app}`,
+            `Issue type: ${issue}`,
+            "",
+            "Message:",
+            message,
+          ].join("\n"),
+        );
+        window.location.href = `mailto:Derek.enderby@outlook.com?subject=${subject}&body=${body}`;
+      });
+    </script>
+  </body>
+</html>
