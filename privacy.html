@@ -69,10 +69,12 @@
         </p>
 
         <h2>Workout Studio</h2>
-        <p>Workout Studio uses Supabase to manage account email, profile name and authentication. Workout routines and session history currently remain in your browser, separated by account; they do not yet sync between devices. Clearing browser storage removes this local workout data.</p>
+        <p>Workout Studio uses Supabase to manage account email, profile name and authentication. Workout routines and session history currently remain in your browser or installed app, separated by account; they do not yet sync between devices. Clearing browser storage removes this local workout data.</p>
+        <h2>Workout Sensors</h2>
+        <p>When you connect a compatible Bluetooth sensor, Workout Studio records heart-rate readings and optional temperature readings with timestamps and the exercise you select. These stay in local browser or installed-app storage. Temperature is never sent to Strava. You can stop recording by disconnecting the sensor or ending the session. Bluetooth access requires your device permission. No scan-derived location is collected.</p>
         <h2>Optional Strava Connection</h2>
-        <p>If you connect Strava, Workout Studio stores your Strava athlete identifier and authorization tokens securely on the server to upload workouts you choose to share. These tokens are not available to other users or the browser. Workout Studio does not import your Strava activity feed.</p>
-        <p>Posting sends the activity title, start time, duration, type and the description you review to Strava. No GPS route is generated. Visibility is controlled by your Strava settings. Minimal activity identifiers and posting status are retained to prevent duplicate uploads.</p>
+        <p>If you connect Strava, Workout Studio stores your Strava athlete identifier and authorization tokens securely on the server to upload newly completed workouts automatically when automatic sharing is enabled. You can switch this off in Account settings. These tokens are not available to other users or the browser. Workout Studio does not import your Strava activity feed.</p>
+        <p>Posting sends the activity title, start time, duration, type and a description of completed sets to Strava. Heart-rate averages and peaks are included only when you separately enable heart-rate sharing. Manual uploads allow you to review and edit these fields. No GPS route is generated. Visibility is controlled by your Strava settings. Minimal activity identifiers and posting status are retained to prevent duplicate uploads.</p>
         <p>You can disconnect Strava in your Workout Studio account settings or revoke access in Strava. Disconnecting removes stored authorization tokens; activities already posted remain on Strava. Contact support for account or integration-record deletion requests.</p>
         <h2>Analytics</h2>
         <p>
