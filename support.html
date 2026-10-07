@@ -18,50 +18,41 @@
       content="SportzLabs application support for AFL Performance and related sports intelligence apps."
     />
     <meta property="og:url" content="https://www.sportzlabs.com/support.html" />
-    <meta property="og:image" content="https://www.sportzlabs.com/assets/afl-performance-icon.png" />
+    <meta property="og:image" content="https://www.sportzlabs.com/assets/sportzlabs-logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Application Support | SportzLabs" />
     <meta
       name="twitter:description"
       content="SportzLabs application support for AFL Performance and related sports intelligence apps."
     />
-    <meta name="twitter:image" content="https://www.sportzlabs.com/assets/afl-performance-icon.png" />
-    <meta name="theme-color" content="#07101f" />
-    <link rel="icon" href="./assets/afl-performance-icon.png" type="image/png" />
-    <link rel="stylesheet" href="./styles.css" />
+    <meta name="twitter:image" content="https://www.sportzlabs.com/assets/sportzlabs-logo.png" />
+    <meta name="theme-color" content="#17283f" />
+    <link rel="icon" href="/workoutstudio-favicon.svg" />
+    <link rel="stylesheet" href="/sportzlabs.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYHWJMJ0R7"></script>
     <script src="./analytics.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="./index.html" aria-label="SportzLabs home">
-        <img src="./assets/sportzlabs-logo.png" alt="SportzLabs" />
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="./index.html#apps">Apps</a>
-        <a href="./index.html#approach">Approach</a>
-        <a href="./index.html#faq">FAQ</a>
-        <a href="./support.html">Support</a>
-      </nav>
-    </header>
+    <a class="skip" href="#main">Skip to content</a><header class="wrap header"><a class="brand" href="/" aria-label="SportzLabs home"><span class="brandmark" aria-hidden="true">s<span>l</span></span>Sportz<span>Labs</span></a><nav aria-label="Main navigation"><a href="/#workoutstudio">Our app</a><a href="/#approach">Our approach</a><a href="/support.html" aria-current="page">Support</a></nav><a class="button small" href="/workoutstudio/">Open Workout Studio <span aria-hidden="true">↗</span></a></header>
 
-    <main class="support-page">
+    <main id="main" class="wrap support-page">
       <section class="support-hero">
         <div>
           <p class="eyebrow">Application Support</p>
           <h1>SportzLabs Support</h1>
           <p>
-            Submit a support request for AFL Performance, the SportzLabs website, or future SportzLabs apps. Include a
+            Submit a support request for Workout Studio, AFL Performance, the SportzLabs website, or other SportzLabs apps. Include a
             few details about what happened so we can look into it quickly.
           </p>
         </div>
-        <div class="support-product-card" aria-label="AFL Performance support">
+        <div class="support-products"><div class="support-product-card" aria-label="Workout Studio support"><img src="/workoutstudio-favicon.svg" alt="Workout Studio app icon" /><div><p class="status">Supported app</p><h2>Workout Studio</h2><p>Accounts, routines, session history, Bluetooth sensors and Strava sharing.</p></div></div><div class="support-product-card" aria-label="AFL Performance support">
           <img src="./assets/afl-performance-icon.png" alt="AFL Performance app icon" />
           <div>
             <p class="status">Supported app</p>
             <h2>AFL Performance</h2>
             <p>Team dashboards, player comparison, PAV charts, data refresh questions and curated AFL news.</p>
           </div>
+        </div>
         </div>
       </section>
 
@@ -99,7 +90,7 @@
                 <option value="App support">App support</option>
                 <option value="Data question">Data question</option>
                 <option value="Bug report">Bug report</option>
-                <option value="Privacy request">Privacy request</option>
+                <option value="Privacy request">Privacy request</option><option value="Account deletion">Account deletion</option>
                 <option value="App Store question">App Store question</option>
                 <option value="Other">Other</option>
               </select>
@@ -116,7 +107,8 @@
               ></textarea>
             </label>
 
-            <button class="primary-link support-submit" type="submit">Submit support request</button>
+            <button class="button support-submit" type="submit">Prepare support email</button>
+            <p class="support-note full-field">This form opens your email app. Send the prepared message there to submit your request. You can also email <a href="mailto:Derek.enderby@outlook.com">Derek.enderby@outlook.com</a> directly. Please do not include passwords.</p>
             <p id="supportStatus" class="support-note" aria-live="polite"></p>
           </form>
         </section>
@@ -138,15 +130,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <img class="footer-logo" src="./assets/sportzlabs-logo.png" alt="SportzLabs" />
-      <div class="footer-links">
-        <a href="./support.html">Support</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./age-suitability.html">Age Suitability</a>
-        <a href="./eula.html">EULA</a>
-      </div>
-    </footer>
+    <footer class="wrap footer"><a class="brand" href="/">Sportz<span>Labs</span></a><p>Simple tools. Purposeful progress.</p><nav aria-label="Footer"><a href="/support.html" aria-current="page">Support</a><a href="/privacy.html">Privacy</a><a href="/age-suitability.html">Age suitability</a><a href="/eula.html">Terms</a></nav><small>© 2026 SportzLabs</small></footer>
 
     <script>
       document.querySelector("#supportForm").addEventListener("submit", (event) => {
