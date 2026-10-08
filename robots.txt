@@ -1,4 +1,9 @@
+# Public marketing pages are available to search crawlers.
 User-agent: *
+Allow: /
+
+# ChatGPT search discovery (separate from model-training controls).
+User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://www.sportzlabs.com/sitemap.xml
