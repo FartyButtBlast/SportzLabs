@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.sportzlabs.com/</loc></url>
+  <url><loc>https://www.sportzlabs.com/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.sportzlabs.com/workoutstudio/</loc></url>
-  <url><loc>https://www.sportzlabs.com/apps/workout-studio/</loc></url>
-  <url><loc>https://www.sportzlabs.com/guides/how-to-track-workouts/</loc></url>
-  <url><loc>https://www.sportzlabs.com/apps/afl-performance-analytics/</loc></url>
-  <url><loc>https://www.sportzlabs.com/support.html</loc></url>
+  <url><loc>https://www.sportzlabs.com/apps/workout-studio/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.sportzlabs.com/guides/how-to-track-workouts/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.sportzlabs.com/apps/afl-performance-analytics/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://www.sportzlabs.com/support.html</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.sportzlabs.com/privacy.html</loc></url>
   <url><loc>https://www.sportzlabs.com/age-suitability.html</loc></url>
   <url><loc>https://www.sportzlabs.com/eula.html</loc></url>
