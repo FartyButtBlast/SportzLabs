@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strength Training Calculator | SportzLabs</title>
+<style>
+:root{color-scheme:dark;--bg:#101827;--card:#172238;--line:#2b3a55;--text:#edf4ff;--muted:#aab8cf;--accent:#65d6b1;--accent2:#8cc8ff}*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#101827,#182947);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:940px;margin:auto;padding:48px 20px 60px}a{color:var(--accent2)}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:.45rem 0 1rem}h2{margin:0 0 .75rem}.lead{color:var(--muted);max-width:680px;font-size:1.08rem}.card{background:rgba(23,34,56,.92);border:1px solid var(--line);border-radius:18px;padding:24px;margin:26px 0;box-shadow:0 18px 50px #08101f66}.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}label{display:grid;gap:7px;color:var(--muted);font-size:.9rem}input,select{width:100%;background:#0f192b;color:var(--text);border:1px solid #405170;border-radius:10px;padding:12px;font:inherit}input:focus,select:focus{outline:2px solid var(--accent)}.assumption{font-size:.8rem;color:var(--muted);margin:18px 0 0}.results{display:grid;gap:12px}.result{background:#0f192b;border:1px solid var(--line);border-radius:14px;padding:17px}.result h3{margin:0;color:var(--accent);font-size:1.1rem}.tag{color:var(--muted);font-size:.84rem}.numbers{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.pill{background:#20314e;border-radius:999px;padding:6px 10px;color:#dceaff;font-size:.9rem}.note{color:var(--muted);font-size:.9rem;margin:.55rem 0 0}.sources{color:var(--muted);font-size:.9rem}.sources li{margin:.5rem 0}@media(max-width:700px){.controls{grid-template-columns:1fr}main{padding-top:30px}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">SportzLabs · Cycling strength</div>
+<h1>Strength training calculator</h1>
+<p class="lead">Simple starting targets for gym exercises that support cycling. Enter your body mass and an estimated one-repetition maximum (1RM) for each exercise.</p>
+<section class="card"><h2>Your inputs</h2><div class="controls">
+<label>Body mass (kg)<input id="mass" type="number" min="30" max="250" value="75"></label>
+<label>Experience<select id="experience"><option value="new">New to lifting</option><option value="regular">Lifting regularly</option></select></label>
+<label>Priority<select id="priority"><option value="cycling">Cycling performance</option><option value="general">General strength</option></select></label>
+</div><p class="assumption">Assumptions: 2 strength sessions per week. 1RM means the heaviest weight you can lift once with good technique. Use a recent tested 1RM or a conservative estimate; stop if technique breaks down.</p></section>
+<section class="card"><h2>Suggested starting targets</h2><div id="results" class="results"></div></section>
+<section class="card sources"><h2>How this is estimated</h2><p>These are practical starting ranges, not prescriptions. They use moderate loads and repetitions consistent with strength and resistance-training guidance, while keeping cycling performance and recovery in mind.</p><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/19204579/">ACSM position stand: progression models in resistance training</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/33497853/">Effects of resistance training on cycling performance: systematic review</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/29564973/">Resistance training load and muscle hypertrophy: systematic review</a></li></ul></section>
+<p><a href="/">Back to SportzLabs</a></p>
+</main><script>
+var exercises=[
+['Back squat','Quads · glutes',.55,.75,'3–6','Keep 2–3 reps in reserve.'],
+['Trap bar deadlift','Glutes · hamstrings',.55,.75,'3–6','Use high handles if learning.'],
+['Romanian deadlift','Hamstrings · glutes',.45,.65,'5–8','Control the lowering phase.'],
+['Leg press','Quads · glutes',.6,.8,'5–10','Do not let the pelvis roll under.'],
+['Bulgarian split squat','Quads · glutes',.35,.55,'6–10 each leg','Use support while learning.'],
+['Barbell row','Back · arms',.45,.65,'6–10','Keep your torso stable.'],
+['Bench press','Chest · shoulders',.5,.7,'5–8','Use a spotter or safeties.'],
+['Seated calf raise','Soleus · calves',.45,.7,'8–15','Pause briefly at the stretched position.'],
+['Standing calf raise','Gastrocnemius · calves',.45,.7,'8–15','Move through a comfortable full range.']
+];
+function update(){var mass=Number(document.getElementById('mass').value)||75;var exp=document.getElementById('experience').value;var cycling=document.getElementById('priority').value==='cycling';var factor=exp==='new'?.82:1;var html='';for(var i=0;i<exercises.length;i++){var x=exercises[i],low=Math.round(x[2]*mass*factor),high=Math.round(x[3]*mass*factor);if(cycling&&i<4)high=Math.round(high*.9);html+='<article class="result"><h3>'+x[0]+'</h3><div class="tag">'+x[1]+'</div><div class="numbers"><span class="pill">'+low+'–'+high+' kg</span><span class="pill">'+x[4]+' reps</span><span class="pill">2–3 sets</span></div><p class="note">'+x[5]+'</p></article>'}document.getElementById('results').innerHTML=html}
+document.getElementById('mass').addEventListener('input',update);document.getElementById('experience').addEventListener('change',update);document.getElementById('priority').addEventListener('change',update);update();
+</script></body></html>
