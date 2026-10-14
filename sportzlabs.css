@@ -46,3 +46,5 @@
 .secondary-app{display:flex;align-items:center;gap:24px;padding-block:32px;border-top:1px solid var(--line)}.secondary-app>img{width:56px;height:56px;border-radius:12px;flex-shrink:0}.secondary-app .eyebrow{margin:0 0 6px;font-size:9px}.secondary-app h2{font-size:22px;letter-spacing:-.5px;margin:0 0 6px}.secondary-app p:last-child{font-size:13px;color:var(--muted);margin:0}.secondary-app>a{margin-left:auto}@media(max-width:700px){.secondary-app{flex-wrap:wrap;gap:16px}.secondary-app>div{flex:1;min-width:220px}.secondary-app>a{margin-left:72px;white-space:normal}}
 
 .brand-icon{display:block;width:32px;height:32px;margin-right:9px;flex-shrink:0}
+/* Ensure public call-to-action labels stay readable on the blue button background. */
+.button{color:#fff!important;-webkit-text-fill-color:#fff;text-shadow:0 1px 1px #172f9a}
