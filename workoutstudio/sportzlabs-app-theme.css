@@ -1,0 +1,42 @@
+/* SportzLabs public-site theme for Workout Studio. Keeps app behavior and data untouched. */
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17283f;background:#fff;--green:#17283f;--lime:#315bea;--muted:#657183;--line:#e2e6ec;--paper:#fff;--danger:#ad403d}
+body{background:#fff;color:#17283f}
+#root{background:#fff}
+.app-shell{max-width:1200px}
+header{height:102px;margin:0 48px;border-bottom:1px solid var(--line);gap:18px}
+header .brand{order:1;color:#17283f;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:24px;letter-spacing:-1px;font-weight:760}
+header .brand span{font-weight:400}
+header .brand i{width:8px;height:8px;background:#315bea;margin:13px 0 0 5px}
+header>.icon-button{order:2;margin-left:auto;border-radius:4px;border-color:#d5dce6;color:#315bea;background:#fff}
+header>.avatar{order:3;border-radius:4px;background:#f2f5fa;color:#315bea;border:1px solid #d5dce6}
+main{padding:70px 48px 135px}
+.page-intro{margin-bottom:35px;align-items:flex-end}
+.eyebrow{color:#315bea;font-size:10px;letter-spacing:1.7px}
+h1,h2,h3,.brand{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1{font-size:clamp(42px,4.2vw,60px);line-height:1.09;letter-spacing:-2.6px;font-weight:650}
+.page-intro .muted{font-size:15px}
+.date-chip{border-radius:4px;border-color:var(--line);color:var(--muted)}
+.dashboard-grid{gap:24px}
+.hero-card{background:#17283f;border-radius:4px;padding:38px 40px}
+.hero-card h2{font-size:clamp(2.1rem,3.4vw,3.2rem);font-weight:600;letter-spacing:-1.8px}
+.hero-card p{color:#c1cbd9}
+.pill{color:#a6b7d0}
+.primary{background:#315bea;color:#fff;border-radius:4px;padding:15px 20px;font-weight:600}
+.primary:hover{background:#2345bd}
+.hero-stripes{opacity:.75}
+.panel,.session-card{border-radius:4px;border-color:var(--line);box-shadow:none}
+.panel{padding:30px}
+.section-title>svg{color:#315bea}
+.stat-grid strong{font-weight:650}
+.week-strip i{background:#f2f5fa}
+.week-strip .trained i{background:#e7edff;color:#315bea}
+.session-card{padding:20px}
+.session-icon{border-radius:4px;background:#e7edff;color:#315bea}
+.training-note{color:#657183}
+nav{background:#fff;border:1px solid var(--line);box-shadow:0 8px 30px #17283f12;border-radius:4px}
+nav button{border-radius:3px;color:#7b8798}
+nav button.active{background:#e7edff;color:#315bea}
+.secondary{border-radius:4px;color:#17283f}
+.text-button{color:#315bea}
+.notice{border-radius:4px}
+@media(max-width:640px){header{height:78px;margin:0 20px}main{padding:45px 20px 120px}.hero-card{padding:28px 25px}.panel{padding:24px}.page-intro{align-items:flex-start}}
