@@ -1,4 +1,4 @@
-const GA_MEASUREMENT_ID='G-PYHWJMJ0R7';
+const GA_MEASUREMENT_ID='G-SB7B4GS83E';
 function ensureAnalytics(){if(document.querySelector('script[src*="googletagmanager.com/gtag/js"]'))return;const script=document.createElement('script');script.async=true;script.src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;document.head.appendChild(script);window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config',GA_MEASUREMENT_ID);}
 ensureAnalytics();
 
