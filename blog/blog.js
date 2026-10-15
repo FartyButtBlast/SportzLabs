@@ -1,3 +1,7 @@
+const GA_MEASUREMENT_ID='G-PYHWJMJ0R7';
+function ensureAnalytics(){if(document.querySelector('script[src*="googletagmanager.com/gtag/js"]'))return;const script=document.createElement('script');script.async=true;script.src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;document.head.appendChild(script);window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config',GA_MEASUREMENT_ID);}
+ensureAnalytics();
+
 const SUPABASE_URL='https://npllwuavofpfudchotma.supabase.co';
 const SUPABASE_KEY='sb_publishable_q_yZF9APuTUsGfHu8N7avA_QbAxS3KY';
 const postsEndpoint=`${SUPABASE_URL}/rest/v1/sportzlabs_blog_posts?select=id,slug,title,excerpt,content,category,author_name,published_at,seo_title,seo_description,cover_image_url&order=published_at.desc`;
