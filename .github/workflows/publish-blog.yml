@@ -1,0 +1,51 @@
+name: Publish website and blog
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # GitHub may delay scheduled runs during busy periods.
+    - cron: '3-58/5 * * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: sportzlabs-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test publication safeguards
+        run: node --test .github/scripts/publish-blog.test.mjs
+      - name: Render published articles and sitemap
+        run: node .github/scripts/publish-blog.mjs --site .
+      - name: Save generated pages and maintain scheduled publishing
+        run: node .github/scripts/commit-blog.mjs
+      - name: Preserve existing website and check for changes
+        id: package
+        run: node .github/scripts/package-site.mjs . _site
+      - uses: actions/configure-pages@v5
+        if: steps.package.outputs.changed == 'true'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.package.outputs.changed == 'true'
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        if: steps.package.outputs.changed == 'true'
+        id: deployment
